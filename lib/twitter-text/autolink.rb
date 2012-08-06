@@ -136,7 +136,7 @@ module Twitter
     # <tt>:link_attribute_block</tt>::     function to modify the attributes of a link based on the entity. called with |entity, attributes| params, and should modify the attributes hash.
     # <tt>:link_text_block</tt>::     function to modify the text of a link based on the entity. called with |entity, text| params, and should return a modified text.
     def auto_link_hashtags(text, options = {}, &block)  # :yields: hashtag_text
-      #auto_link_entities(text, Extractor.extract_hashtags_with_indices(text), options, &block)
+      auto_link_entities(text, Extractor.extract_hashtags_with_indices(text), options, &block)
     end
 
     # Add <tt><a></a></tt> tags around the cashtags in the provided <tt>text</tt>.
@@ -152,7 +152,7 @@ module Twitter
     # <tt>:link_attribute_block</tt>::     function to modify the attributes of a link based on the entity. called with |entity, attributes| params, and should modify the attributes hash.
     # <tt>:link_text_block</tt>::     function to modify the text of a link based on the entity. called with |entity, text| params, and should return a modified text.
     def auto_link_cashtags(text, options = {}, &block)  # :yields: cashtag_text
-      #auto_link_entities(text, Extractor.extract_cashtags_with_indices(text), options, &block)
+      auto_link_entities(text, Extractor.extract_cashtags_with_indices(text), options, &block)
     end
 
     # Add <tt><a></a></tt> tags around the URLs in the provided <tt>text</tt>.
