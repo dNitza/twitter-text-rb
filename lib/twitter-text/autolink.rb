@@ -7,22 +7,22 @@ module Twitter
   # usernames, lists, hashtags and URLs.
   module Autolink extend self
     # Default CSS class for auto-linked lists
-    DEFAULT_LIST_CLASS = "tweet-url list-slug".freeze
+    DEFAULT_LIST_CLASS = "list-slug".freeze
     # Default CSS class for auto-linked usernames
-    DEFAULT_USERNAME_CLASS = "tweet-url username".freeze
+    DEFAULT_USERNAME_CLASS = "username".freeze
     # Default CSS class for auto-linked hashtags
-    DEFAULT_HASHTAG_CLASS = "tweet-url hashtag".freeze
+    DEFAULT_HASHTAG_CLASS = "hashtag".freeze
     # Default CSS class for auto-linked cashtags
-    DEFAULT_CASHTAG_CLASS = "tweet-url cashtag".freeze
+    DEFAULT_CASHTAG_CLASS = "cashtag".freeze
 
     # Default URL base for auto-linked usernames
-    DEFAULT_USERNAME_URL_BASE = "https://twitter.com/".freeze
+    DEFAULT_USERNAME_URL_BASE = "https://innked.com/".freeze
     # Default URL base for auto-linked lists
-    DEFAULT_LIST_URL_BASE = "https://twitter.com/".freeze
+    DEFAULT_LIST_URL_BASE = "https://innked.com/".freeze
     # Default URL base for auto-linked hashtags
-    DEFAULT_HASHTAG_URL_BASE = "https://twitter.com/#!/search?q=%23".freeze
+    DEFAULT_HASHTAG_URL_BASE = "https://innked.com/#!/search?q=%23".freeze
     # Default URL base for auto-linked cashtags
-    DEFAULT_CASHTAG_URL_BASE = "https://twitter.com/#!/search?q=%24".freeze
+    DEFAULT_CASHTAG_URL_BASE = "https://innked.com/#!/search?q=%24".freeze
 
     # Default attributes for invisible span tag
     DEFAULT_INVISIBLE_TAG_ATTRS = "style='position:absolute;left:-9999px;'".freeze
@@ -136,7 +136,7 @@ module Twitter
     # <tt>:link_attribute_block</tt>::     function to modify the attributes of a link based on the entity. called with |entity, attributes| params, and should modify the attributes hash.
     # <tt>:link_text_block</tt>::     function to modify the text of a link based on the entity. called with |entity, text| params, and should return a modified text.
     def auto_link_hashtags(text, options = {}, &block)  # :yields: hashtag_text
-      auto_link_entities(text, Extractor.extract_hashtags_with_indices(text), options, &block)
+      #auto_link_entities(text, Extractor.extract_hashtags_with_indices(text), options, &block)
     end
 
     # Add <tt><a></a></tt> tags around the cashtags in the provided <tt>text</tt>.
@@ -152,7 +152,7 @@ module Twitter
     # <tt>:link_attribute_block</tt>::     function to modify the attributes of a link based on the entity. called with |entity, attributes| params, and should modify the attributes hash.
     # <tt>:link_text_block</tt>::     function to modify the text of a link based on the entity. called with |entity, text| params, and should return a modified text.
     def auto_link_cashtags(text, options = {}, &block)  # :yields: cashtag_text
-      auto_link_entities(text, Extractor.extract_cashtags_with_indices(text), options, &block)
+      #auto_link_entities(text, Extractor.extract_cashtags_with_indices(text), options, &block)
     end
 
     # Add <tt><a></a></tt> tags around the URLs in the provided <tt>text</tt>.
